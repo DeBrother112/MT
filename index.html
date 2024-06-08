@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+
+  <title>ПоGoда</title>
+</head>
+
+<div class="container">
+  <div class="header">
+    <h1>ПоGoда</h1>
+    <input type="text" id="cityInput" list="city" placeholder="Введіть назву міста...">
+    <i class="fas fa-search" id="searchButton"></i>
+
+  </div>
+
+  <div class="box">
+    <div class="day 1">1
+    </div>
+
+    <div class="day 2">2
+    </div>
+
+    <div class="day 3">3
+    </div>
+
+    <div class="day 4">4
+    </div>
+
+    <div class="day 5">5
+    </div>
+
+    <div class="day 6">6
+    </div>
+
+    <div class="day 7">7
+    </div>
+
+  </div>
+
+  <div id="err">Wrong city</div>
+
+  <body>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.11/alertify.core.css'
+      integrity='sha512-eZih0rne5vAjEWet1syNsU3LTj1TygGLuLq304xv+JZeaIqi1E1OCbYFD0YPMqhgqFYoOH28QJzJIj+wkVWm+A=='
+      crossorigin='anonymous' defer />
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.11/alertify.bootstrap.css'
+      integrity='sha512-eauod+oRhJ84heQKG7Koq4RFiVEXhqhi14M+3+m/6XPJ/FmRHz4yDJ9mtz1X8HdOmQjdX69Wg8/rKal7lgEfsw=='
+      crossorigin='anonymous' defer />
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.3.11/alertify.js'
+      integrity='sha512-7Qu5pr+fIUNnTgU03DC5Y1b3brNO64CQUCT1X+hEcbMM8NGasu+WWBVtF7byk01X+gFdZqSPDpOV3y5lFair0A=='
+      crossorigin='anonymous' defer></script>
+
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js"
+      integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"
+      defer></script>
+
+    <script src="script.js" defer></script>
+
+
+    <datalist id="city">
+      <option value="Kyiv"></option>
+      <option value="London"></option>
+      <option value="Odesa"></option>
+      <option value="Strawberry"></option>
+      <option value="Vanilla"></option>
+    </datalist>
+
+</div>
+</body>
+
+</html>
