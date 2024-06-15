@@ -2,16 +2,32 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  
 }
 
 body {
-  background: url(images/thunder.webp);
+  background: url(images/sunny.webp);
   background-size: 100%;
 }
 
+.box {
+  background-color: rgb(255, 255, 255);
+  border-radius: 25px;
+  margin: 25px;
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: 0 auto;
+  gap: 1rem;
+}
+
 .container {
-  background-color: rgba(5, 5, 5, 0.648);
+  background-color: rgba(5, 5, 5, 0.47);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
 }
 
 .header {
@@ -31,15 +47,17 @@ body {
   padding-left: 10px;
 }
 
-
 .day {
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
+  
   width: 9rem;
   height: 15rem;
- background-color: rgba(140, 136, 136, 0.196);
+  background-color: rgba(140, 136, 136, 0.196);
   border: solid black;
   border-radius: 15px;
-  color: white;
+  color: black;
+  text-align: center;
 }
 
 #searchButton {
@@ -56,11 +74,47 @@ body {
   text-shadow: 2 4 2;
 }
 
-#err{
+#err {
   display: none;
 }
 
 .textTemp {
   color: black;
   font-size: 15px;
+}
+
+#cityName {
+  padding: 10px;
+}
+
+.current {
+  display: flex;
+  background-color: white;
+  border-radius: 25px;
+  height: 100px;
+  width: 750px;
+  align-items: center;
+}
+
+#imgaga {
+  height: 90px;
+  width: 90px;
+}
+
+.temp {
+  font-size: 20px;
+  margin: 0 7px;
+}
+
+.feelslike {
+  font-size: 20px;
+  color: gray;
+}
+
+.condition, .wind, .cloud, .pressure {
+  font-size: 20px;
+}
+
+#pogoda {
+  color: white;
 }
