@@ -15,7 +15,7 @@ document.querySelector('#cityInput').addEventListener('change', () => {
         alertify.error("city Input is empty")
         return;
     }
-    fetch(`http://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${city}`)
+    fetch(`https://api.weatherapi.com/v1/search.json?key=${apiKey}&q=${city}`)
         .then(response => response.json())
         .then(json => {
             console.log(json)
@@ -27,7 +27,7 @@ document.querySelector('#cityInput').addEventListener('change', () => {
         })
 })
 
-fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=10&aqi=no&alerts=no`)
+fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=10&aqi=no&alerts=no`)
     .then(response => response.json())
     .then(json => {
         render(json)
