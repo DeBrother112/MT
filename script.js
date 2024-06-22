@@ -29,7 +29,7 @@ document.querySelector('#cityInput').addEventListener('change', () => {
 
 fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=10&aqi=no&alerts=no`)
     .then(response => response.json())
-    .then(json => { 
+    .then(json => {
         render(json)
     })
 
@@ -39,13 +39,14 @@ function render(json) {
         alertify.error("City not found")
     }
     console.log(json)
-    document.querySelector(".temp").innerHTML = "temp: " + json.current.temp_c + "°C"
+    document.querySelector(".temp").innerHTML = "temp🌡️: " + json.current.temp_c + "°C"
     document.querySelector(".condition").innerHTML = json.current.condition.text
     document.querySelector(".feelslike").innerHTML = "feelslike: " + json.current.feelslike_c + "°C"
     document.querySelector(".current img").setAttribute("src", json.current.condition.icon)
-    document.querySelector(".wind").innerHTML = "wind : " + json.current.wind_kph + "k/h"
-    document.querySelector(".cloud").innerHTML = "cloud : " + json.current.cloud + "%"
-    document.querySelector(".pressure").innerHTML = "Presure : " + json.current.pressure_mb + "mb"
+    document.querySelector(".wind").innerHTML = "wind💨: " + json.current.wind_kph + "k/h"
+    document.querySelector(".wind_dir").innerHTML = "wind dir.🧭:" + json.current.wind_dir
+    document.querySelector(".cloud").innerHTML = "cloud☁️: " + json.current.cloud + "%"
+    document.querySelector(".pressure").innerHTML = "Presure⏲️: " + json.current.pressure_mb + "mb"
 
 
     document.querySelector("#cityName").innerHTML = json.location.country + ", " + json.location.name
@@ -62,5 +63,23 @@ function render(json) {
             
             `
 
+        let color = "";
+        if (json.current.temp_c <= 0) {
+            color = "rgba(71, 169, 211, 0.6)";
+        } else if (json.current.temp_c > 0 && json.current.temp_c <= 10) {
+            color = "rgba(78, 226, 211, 0.6)";
+        } else if (json.current.temp_c > 10 && json.current.temp_c <= 20) {
+            color = "rgba(104, 235, 53, 0.6)";
+        } else if (json.current.temp_c > 20 && json.current.temp_c <= 25) {
+            color = "rgba(247, 231, 7, 0.6)";
+        } else if (json.current.temp_c > 25 && json.current.temp_c <= 30) {
+            color = "rgba(247, 163, 7, 0.6)";
+        } else if (json.current.temp_c > 30 && json.current.temp_c <= 40) {
+            color = "rgba(247, 87, 7, 0.6)";
+        }
+        document.querySelector(".current").style.background = color;
+
+
     })
+
 }
