@@ -4,7 +4,7 @@ let city = "Kyiv"
 document.querySelector("#searchButton").addEventListener("click", () => {
     let city = document.querySelector("#cityInput").value
     console.log(city)
-    fetch(`http://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=10&aqi=no&alerts=no`).then(response => response.json()).then(json => {
+    fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=10&aqi=no&alerts=no`).then(response => response.json()).then(json => {
         render(json)
     })
 })
