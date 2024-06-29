@@ -32,20 +32,21 @@ fetch(`https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city}&days=
     .then(json => {
         render(json)
     })
+    
 
 
 function render(json) {
     if (json.code == '404') {
         alertify.error("City not found")
-    }
+    } 
     console.log(json)
-    document.querySelector(".temp").innerHTML = "temp🌡️: " + json.current.temp_c + "°C"
+    document.querySelector(".temp").innerHTML = "Temp🌡️: " + json.current.temp_c + "°C"
     document.querySelector(".condition").innerHTML = json.current.condition.text
-    document.querySelector(".feelslike").innerHTML = "feelslike: " + json.current.feelslike_c + "°C"
+    document.querySelector(".feelslike").innerHTML = "Feelslike: " + json.current.feelslike_c + "°C"
     document.querySelector(".current img").setAttribute("src", json.current.condition.icon)
-    document.querySelector(".wind").innerHTML = "wind💨: " + json.current.wind_kph + "k/h"
-    document.querySelector(".wind_dir").innerHTML = "wind dir.🧭:" + json.current.wind_dir
-    document.querySelector(".cloud").innerHTML = "cloud☁️: " + json.current.cloud + "%"
+    document.querySelector(".wind").innerHTML = "Wind💨: " + json.current.wind_kph + "k/h"
+    document.querySelector(".wind_dir").innerHTML = "dir.🧭: " + json.current.wind_dir
+    document.querySelector(".cloud").innerHTML = "Cloud☁️: " + json.current.cloud + "%"
     document.querySelector(".pressure").innerHTML = "Presure⏲️: " + json.current.pressure_mb + "mb"
 
 
